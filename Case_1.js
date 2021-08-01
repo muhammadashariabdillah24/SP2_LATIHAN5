@@ -1,7 +1,7 @@
 function dataHandling2(input) {
 
 
-    let dataArray = input 
+    let dataArray = input
     // 1 . varibale dataArray mewakili sebuah array yang ada didalam paremeter input
 
     dataArray.splice(1, 4, "Roman Alamsyah Elsharawy", "Provinsi Bandar Lampung", "21/05/1989", "Pria", "SMA Internasional Metro")
@@ -20,8 +20,9 @@ function dataHandling2(input) {
 
 // Tanggal
 
+
     for (let i = 1; i <= 31; i++){
-        
+
         switch (true) {
             case hasilSplit[0] == i:
                 tanggal = i
@@ -31,6 +32,7 @@ function dataHandling2(input) {
                 tanggal
                 break;
         }
+
     }
 
 // Bulan Dalam Bentuk String
@@ -48,7 +50,7 @@ function dataHandling2(input) {
 
             case hasilSplit[1] == 03:
                 bulan = 'Maret'
-                bulan2 = '03'
+                // bulan2 = '03'
                 break;
 
             case hasilSplit[1] == 04:
@@ -112,6 +114,7 @@ function dataHandling2(input) {
                     break;
             
                 default:
+                    bulan2
                     break;
             }
     
@@ -120,7 +123,7 @@ function dataHandling2(input) {
 
 // Tahun
 
-    for (let i = 1000; i <= 2000; i++) {
+    for (let i = 1; i <= new Date().getFullYear(); i++) {
 
         switch (true) {
             case hasilSplit[2] == i:
@@ -133,9 +136,8 @@ function dataHandling2(input) {
         }
     }
 
-    let hasilBalik = hasilSplit = ["1989", "21", "05"]
-    // let hasilSplie = hasilSort
-    // 4 . Fungsi reverse untuk mengurutkan data terbesar hingga terkecil
+    let hasilBalik = hasilSplit.sort(function(a, b){return b-a})
+    // 4 . Fungsi sort mengurutkan sebuah value dari terkecil sampe terbesar
 
     let hasilGabung = tanggal + '-' + bulan2 + '-' + tahun
     // 5 . data tanggal, bulan, tahun digabung menjadi satu dan dipisahkan menggunakan (-)
@@ -144,8 +146,8 @@ function dataHandling2(input) {
     // 6 . karena dalam varibale dataArray berisi data Array , kita rubah menjadi string dengan fungsi toString()
     // dan kita ambil value dengan urutan ke 1 yaitu Roman Alamsyah Elsharawy
 
-    let hasilSlice = hasilConvert.slice(-0, -10)
-    // 7 . Funsgi slice gunanya untuk memotong sebuah string. dalam soal yang diberi oleh master kita Yaitu The Power Of Master Jujun
+    let hasilSlice = hasilConvert.slice(0, 14)
+    // 7 . Funsgi slice gunanya untuk memotong sebuah string. dalam soal yang diberi oleh master kita yaitu Master Jujun
     // 
 
     console.log(dataArray);
